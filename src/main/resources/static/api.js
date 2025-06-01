@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (item.purchased) label.style.textDecoration = "line-through";
 
                     checkbox.addEventListener("change", () => {
-                        fetch(`/api/buy?id=${item.id}`, { method: "PATCH" })
+                        fetch(`/api/buy/${item.id}`, { method: "PATCH" })
                             .then(() => fetchProducts());
                     });
 
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     right.className = "btn btn-danger btn-sm";
                     right.textContent = "Удалить";
                     right.addEventListener("click", () => {
-                        fetch(`/api/delete?id=${item.id}`, { method: "DELETE" })
+                        fetch(`/api/delete/${item.id}`, { method: "DELETE" })
                             .then(() => fetchProducts());
                     });
 

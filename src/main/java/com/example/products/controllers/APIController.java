@@ -22,13 +22,13 @@ public class APIController {
         itemsService.addItem(item);
     }
 
-    @DeleteMapping("/delete")
-    public void deleteItem(@RequestParam(name = "id") Long id) {
+    @DeleteMapping("/delete/{id}")
+    public void deleteItem(@PathVariable Long id) {
         itemsService.deleteItem(id);
     }
 
-    @PatchMapping("/buy")
-    public void setPurchase(@RequestParam(name = "id") Long id) {
+    @PatchMapping("/buy/{id}")
+    public void setPurchase(@PathVariable Long id) {
         itemsService.setPurchase(id);
     }
 }
